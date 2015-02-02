@@ -26,13 +26,15 @@ li {
 }
 .deck li, .hands span{
   border: black 1px solid;
-  width: 3em;
+  width: 2.8em;
   height: 4.5em;
   border-radius: 5px;
   display: inline-block;
   margin: 0.3em;
   background: #FFFFFF;
   font-size: 1em;
+  text-align: left;
+  padding-left: 0.2em;
 }
 .deck li {
   position: absolute;
