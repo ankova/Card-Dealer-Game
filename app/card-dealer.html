@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="cardDealer">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script data-require="angular.js@1.3.10" data-semver="1.3.10"
+          src="https://code.angularjs.org/1.3.10/angular.js"></script>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/cardDealer.js"></script>
+</head>
+
+<body ng-controller="cardDealerCtrl as cd">
+<div id="cardDealer">
+  <h1>Card Dealer</h1>
+
+  <div class="deck">
+    <button ng-click="cd.shuffle()">Shuffle</button>
+    <button ng-click="cd.refresh()">Refresh</button>
+    <ul>
+      <li ng-style="{'transform': 'translateX({{cd.calcArcXOffset($index)}}em) translateY({{cd.calcArcYOffset($index)}}em) rotate({{cd.calcArcRotation($index)}}deg)',
+                      '-webkit-transform' : 'translateX({{cd.calcArcXOffset($index)}}em) translateY({{cd.calcArcYOffset($index)}}em) rotate({{cd.calcArcRotation($index)}}deg)',
+                      '-ms-transform': 'translateX({{cd.calcArcXOffset($index)}}em) translateY({{cd.calcArcYOffset($index)}}em) rotate({{cd.calcArcRotation($index)}}deg)'}"
+          class="card-{{cd.suitColors[c[0]]}}" ng-repeat="c in cd.deck track by $index">{{c}}</li>
+    </ul>
+  </div>
+
+  <div class="hands">
+    <input type="number" max="{{cd.deck.length}}" ng-model="cd.handSize" />
+    <button ng-click="cd.deal(cd.handSize)">Deal</button>
+    <ul>
+      <li ng-repeat="hand in cd.hands">
+        <span class="card-{{cd.suitColors[card[0]]}}" ng-repeat="card in hand">
+          {{card}}
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+h1, h2 {
+  color: wheat;
+}
+html {
+  background: #0F7C00;
+}
+ul {
+  padding: 0;
+  position: relative;
+}
+li {
+  list-style: none;
+}
+#cardDealer {
+  width: 90%;
+  margin: auto;
+}
+#cardDealer .deck {
+  width: 65%;
+  float: left;
+}
+#cardDealer .hands {
+  width: 35%;
+  float: right;
+  text-align: right;
+}
+.deck li, .hands span{
+  border: black 1px solid;
+  width: 3em;
+  height: 4.5em;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0.3em;
+  background: #FFFFFF;
+  font-size: 1em;
+}
+.deck li {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+button {
+  background: #76be56;
+  border-radius: 4px;
+  padding: 0.5em 0.7em;
+  border: none;
+  border: 1px solid #A0A89F;
+  -webkit-appearance: normal;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+input[type="number"]{
+  padding: 0.5em;
+  border-radius: 4px;
+  border: none;
+  width: 30%;
+}
+.card-red {
+  color:red;
+}
+.card-black {
+  color:black;
+}
