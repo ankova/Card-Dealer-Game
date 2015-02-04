@@ -18,10 +18,8 @@
     <button ng-click="cd.shuffle()">Shuffle</button>
     <button ng-click="cd.refresh()">Refresh</button>
     <ul>
-      <li ng-style="{'transform': 'translateX({{cd.calcArcXOffset($index)}}em) translateY({{cd.calcArcYOffset($index)}}em) rotate({{cd.calcArcRotation($index)}}deg)',
-                      '-webkit-transform' : 'translateX({{cd.calcArcXOffset($index)}}em) translateY({{cd.calcArcYOffset($index)}}em) rotate({{cd.calcArcRotation($index)}}deg)',
-                      '-ms-transform': 'translateX({{cd.calcArcXOffset($index)}}em) translateY({{cd.calcArcYOffset($index)}}em) rotate({{cd.calcArcRotation($index)}}deg)'}"
-          class="card-{{cd.suitColors[c[0]]}}" ng-repeat="c in cd.deck track by $index">{{c}}</li>
+      <li ng-repeat="c in cd.deck track by $index"
+          ng-style="cd.positionStyle($index)" class="card-{{cd.suitColors[c[0]]}}">{{c}}</li>
     </ul>
   </div>
 
